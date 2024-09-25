@@ -62,7 +62,7 @@ def account():
 @login_required
 def user():
     user = User.query.all()
-    return render_template("users.html" , title = "Users", user = user)
+    return render_template("users.html" , title = "Users", user = user, category= Category.query.all())
 
 @users.route("/logout")
 @login_required
