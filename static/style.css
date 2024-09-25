@@ -1,0 +1,22 @@
+nav li a{
+    color:rgb(72, 102, 133) !important;
+}
+nav li a:hover{
+    color: rgb(14, 207, 214) !important;
+}
+section {
+    border-radius: 2px;
+}
+#category{
+    border: 1px solid grey;
+    text-align: center;
+}
+h3 a{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+#comment{
+    border: 1px solid grey ;
+    padding: 4px;
+    margin-top: 2px;
+}

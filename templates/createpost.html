@@ -1,0 +1,49 @@
+{% extends 'extends/layout.html' %}
+
+{% block content %}
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 mt-2">
+            <div class="mt-2">
+                <form action="createpost" method="post">
+                    {{ form.hidden_tag() }}
+                    <div class="mb-3">
+                        {{ form.category.label (class='form-label')}}
+                        {% if form.category.errors %}
+                            {% for error in form.category.errors %}
+                                {{ error}}
+                            {% endfor %}
+                        {% else %}
+                            {{form.category (class='form-control')}}
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.title.label (class='form-label')}}
+                        {% if form.title.errors %}
+                            {% for error in form.title.errors %}
+                                {{ error}}
+                            {% endfor %}
+                        {% else %}
+                            {{form.title (class='form-control')}}
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        {{ form.content.label (class='form-label')}}
+                        {% if form.content.errors %}
+                            {% for error in form.content.errors %}
+                                {{ error}}
+                            {% endfor %}
+                        {% else %}
+                            {{form.content (class='form-control')}}
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+{% endblock %}

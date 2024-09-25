@@ -1,0 +1,29 @@
+{% extends 'extends/layout.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row container mt-5">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <h4>Create Category</h4>
+            <form action="createcategory" method="post">
+                {{ form.hidden_tag()}}
+                <div class="mb-3">
+                    {{ form.category_name.label (class='form-label') }}
+                    {% if form.category_name.errors %}
+                        {% for error in form.category_name.errors %}
+                            {{ error}}
+                        {% endfor %}
+                    {% else %}
+                        {{ form.category_name (class='form-control') }}
+                    {% endif %}
+                </div>
+                <div class="mb-3">
+                    {{form.submit (class="btn btn-primary")}}
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</div>
+{% endblock %}
